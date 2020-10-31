@@ -74,3 +74,4 @@ fabric.properties
 /.idea/
 *.project
 *.classpath
+.settings
