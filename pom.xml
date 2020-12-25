@@ -20,6 +20,7 @@
         <module>storm</module>
         <module>storm-kafka</module>
         <module>zookeeper</module>
+        <module>flink-scala</module>
     </modules>
 
 </project>

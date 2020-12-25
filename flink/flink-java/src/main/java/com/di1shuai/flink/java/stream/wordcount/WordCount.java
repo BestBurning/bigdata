@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.di1shuai.flink.streaming.wordcount;
+package com.di1shuai.flink.java.stream.wordcount;
 
-import com.di1shuai.flink.streaming.wordcount.util.WordCountData;
+import com.di1shuai.flink.java.stream.wordcount.util.WordCountData;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.utils.ParameterTool;

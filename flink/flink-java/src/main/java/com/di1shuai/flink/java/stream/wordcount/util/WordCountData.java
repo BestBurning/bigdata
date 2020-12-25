@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.di1shuai.flink.streaming.wordcount.util;
+package com.di1shuai.flink.java.stream.wordcount.util;
 
 /**
  * Provides the default data sets used for the WordCount example program.
