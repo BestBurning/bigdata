@@ -11,7 +11,7 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer.Semantic
 
 /**
  * @author: Shea
- * @date: 2020/12/27
+ * @date: 2020/6/27
  * @description:
  */
 object KafkaStream {

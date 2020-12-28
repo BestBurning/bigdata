@@ -13,7 +13,7 @@ case class SensorReader(id: String, timestamp: Long, temperature: Double)
 
 /**
  * @author: Shea
- * @date: 2020/12/28
+ * @date: 2020/6/28
  * @description:
  */
 object SourceDemo {

@@ -5,7 +5,7 @@ import org.apache.flink.streaming.api.scala._
 
 /**
  * @author: Shea
- * @date: 2020/12/24
+ * @date: 2020/6/24
  * @description:
  */
 object StreamWordCount {
