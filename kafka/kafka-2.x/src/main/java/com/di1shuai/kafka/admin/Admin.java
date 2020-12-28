@@ -19,7 +19,7 @@ public class Admin {
     static final String streamOutTopic = "WordsWithCountsTopic";
 
     static {
-        props.setProperty("bootstrap.servers", "kafka:9092,kafka:9093,kafka:9094");
+        props.setProperty("bootstrap.servers", "kafka1:9092");
         adminClient = KafkaAdminClient.create(props);
     }
 
@@ -55,8 +55,8 @@ public class Admin {
 
     private static void createTopic() {
         CreateTopicsResult topics = adminClient.createTopics(Arrays.asList(
-                new NewTopic(streamInTopic, 3, (short) 3),
-                new NewTopic(streamOutTopic, 3, (short) 3)
+                new NewTopic(streamInTopic, 3, (short) 1),
+                new NewTopic(streamOutTopic, 3, (short) 1)
                 )
         );
 //        topics.all().whenComplete(new KafkaFuture.BiConsumer<Void, Throwable>() {

@@ -10,17 +10,33 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kafka-2.x</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <KAFKA.VERSION>2.7.0</KAFKA.VERSION>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
-            <version>2.5.0</version>
+            <version>${KAFKA.VERSION}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-streams</artifactId>
-            <version>2.5.0</version>
+            <version>${KAFKA.VERSION}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

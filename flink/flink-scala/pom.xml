@@ -11,18 +11,26 @@
 
     <artifactId>flink-scala</artifactId>
 
+    <properties>
+        <FLINK.VERSION>1.12.0</FLINK.VERSION>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-scala_2.12</artifactId>
-            <version>1.12.0</version>
+            <version>${FLINK.VERSION}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-clients_2.12</artifactId>
-            <version>1.12.0</version>
+            <version>${FLINK.VERSION}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka_2.12</artifactId>
+            <version>${FLINK.VERSION}</version>
+        </dependency>
     </dependencies>
 
 
