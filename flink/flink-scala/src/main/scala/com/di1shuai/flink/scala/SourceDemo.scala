@@ -1,15 +1,11 @@
 package com.di1shuai.flink.scala
 
-import java.util.{Properties, UUID}
-
-import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.functions.source.SourceFunction
 import org.apache.flink.streaming.api.scala._
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 
 import scala.util.Random
 
-case class SensorReader(id: String, timestamp: Long, temperature: Double)
+
 
 /**
  * @author: Shea
