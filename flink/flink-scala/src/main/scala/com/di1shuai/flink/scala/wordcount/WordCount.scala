@@ -1,8 +1,7 @@
-package com.di1shuai.flink.scala
+package com.di1shuai.flink.scala.wordcount
 
-import org.apache.flink.api.scala.ExecutionEnvironment
+import org.apache.flink.api.scala.{DataSet, ExecutionEnvironment}
 import org.apache.flink.api.scala._
-
 /**
  * @author: Shea
  * @date: 2020/6/24
@@ -17,9 +16,9 @@ object WordCount {
     val inputDataSet: DataSet[String] = env.readTextFile(inputPath)
     val resultDataSet: DataSet[(String, Int)] = inputDataSet
       .flatMap(_.toLowerCase.split("\\W+")) //每行打散
-      .map((_, 1))            //(word,1)
-      .groupBy(0)   //以第一个元素word作为分组依据
-      .sum(1)        //对所有分组数据的第二个元素count求和
+      .map((_, 1)) //(word,1)
+      .groupBy(0) //以第一个元素word作为分组依据
+      .sum(1) //对所有分组数据的第二个元素count求和
     //打印
     resultDataSet.print()
 

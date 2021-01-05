@@ -1,8 +1,8 @@
-package com.di1shuai.flink.scala
+package com.di1shuai.flink.scala.wordcount
 
 import org.apache.flink.api.java.utils.ParameterTool
+import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.streaming.api.scala._
-
 /**
  * @author: Shea
  * @date: 2020/6/24
