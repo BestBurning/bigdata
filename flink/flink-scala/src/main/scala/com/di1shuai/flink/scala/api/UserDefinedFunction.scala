@@ -1,13 +1,11 @@
-package com.di1shuai.flink.scala
+package com.di1shuai.flink.scala.api
 
-import org.apache.flink.api.common.functions.{FilterFunction, FlatMapFunction, MapFunction, RichMapFunction}
+import org.apache.flink.api.common.functions.{FilterFunction, MapFunction, RichMapFunction}
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.functions.source.SourceFunction
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
-import org.apache.flink.streaming.api.scala._
 
 import scala.util.Random
-
 
 /**
  * @author: Shea

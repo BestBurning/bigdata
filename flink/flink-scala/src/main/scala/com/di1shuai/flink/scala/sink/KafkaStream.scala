@@ -1,13 +1,10 @@
-package com.di1shuai.flink.scala
-
-import java.util.Properties
+package com.di1shuai.flink.scala.sink
 
 import org.apache.flink.api.common.serialization.SimpleStringSchema
+import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer, FlinkKafkaProducer}
-import org.apache.flink.streaming.api.scala._
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer.Semantic
 
-
+import java.util.Properties
 
 /**
  * @author: Shea
@@ -24,8 +21,8 @@ object KafkaStream {
     val producerProperties = new Properties
     producerProperties.setProperty("bootstrap.servers", "kafka1:9092")
 
-    val topicIn  = "flink-stream-in"
-    val topicOut  = "flink-stream-out"
+    val topicIn = "flink-stream-in"
+    val topicOut = "flink-stream-out"
 
     val kafkaSource = new FlinkKafkaConsumer(
       topicIn,
@@ -33,8 +30,8 @@ object KafkaStream {
       consumerProperties
     )
     val kafkaSink = new FlinkKafkaProducer(
-      topicOut,                  // target topic
-      new SimpleStringSchema(),    // serialization schema
+      topicOut, // target topic
+      new SimpleStringSchema(), // serialization schema
       producerProperties
     )
     //,  //                 producer config FlinkKafkaProducer.Semantic.EXACTLY_ONCE)
@@ -46,11 +43,8 @@ object KafkaStream {
     dataStream.addSink(kafkaSink)
 
 
-
     env.execute()
 
   }
 
 }
-
-

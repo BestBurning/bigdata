@@ -1,8 +1,9 @@
-package com.di1shuai.flink.scala
+package com.di1shuai.flink.scala.api
 
+import com.di1shuai.flink.scala.SensorReader
 import org.apache.flink.api.common.functions.ReduceFunction
 import org.apache.flink.streaming.api.functions.ProcessFunction
-import org.apache.flink.streaming.api.scala._
+import org.apache.flink.streaming.api.scala.{OutputTag, StreamExecutionEnvironment}
 import org.apache.flink.util.Collector
 
 /**
@@ -93,12 +94,12 @@ object Transformations {
 
     //-------------------
     //打印
-//    aggStream.print("agg")
-//    reduceStream.print("reduce")
-//    highStream.print("high")
-//    normalStream.print("normal")
-//    allStream.print("all")
-//    coMapResultStream.print("coMap")
+    //    aggStream.print("agg")
+    //    reduceStream.print("reduce")
+    //    highStream.print("high")
+    //    normalStream.print("normal")
+    //    allStream.print("all")
+    //    coMapResultStream.print("coMap")
     unionStream.print("union")
 
 

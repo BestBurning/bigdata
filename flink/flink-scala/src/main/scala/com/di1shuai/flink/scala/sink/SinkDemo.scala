@@ -1,10 +1,10 @@
-package com.di1shuai.flink.scala
+package com.di1shuai.flink.scala.sink
 
+import com.di1shuai.flink.scala.SensorReader
 import org.apache.flink.api.common.serialization.SimpleStringEncoder
 import org.apache.flink.core.fs.Path
 import org.apache.flink.streaming.api.functions.sink.filesystem.StreamingFileSink
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
-import org.apache.flink.streaming.api.scala._
 
 /**
  * @author: Shea
@@ -31,9 +31,9 @@ object SinkDemo {
     dataResult.print()
     dataResult.writeAsCsv(outputCSVPath)
     dataResult.addSink(StreamingFileSink.forRowFormat(
-        new Path(outputSinkPath),
-        new SimpleStringEncoder[SensorReader]()
-      ).build()
+      new Path(outputSinkPath),
+      new SimpleStringEncoder[SensorReader]()
+    ).build()
     )
 
     env.execute("Sink Demo")

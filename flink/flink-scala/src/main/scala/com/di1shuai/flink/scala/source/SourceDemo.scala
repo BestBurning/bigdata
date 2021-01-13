@@ -1,5 +1,6 @@
-package com.di1shuai.flink.scala
+package com.di1shuai.flink.scala.source
 
+import com.di1shuai.flink.scala.SensorReader
 import org.apache.flink.streaming.api.functions.source.SourceFunction
 import org.apache.flink.streaming.api.scala._
 
