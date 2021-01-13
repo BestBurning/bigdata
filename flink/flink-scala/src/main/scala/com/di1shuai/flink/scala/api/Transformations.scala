@@ -5,7 +5,7 @@ import org.apache.flink.api.common.functions.ReduceFunction
 import org.apache.flink.streaming.api.functions.ProcessFunction
 import org.apache.flink.streaming.api.scala.{OutputTag, StreamExecutionEnvironment}
 import org.apache.flink.util.Collector
-
+import org.apache.flink.streaming.api.scala._
 /**
  * @author: Shea
  * @date: 2020/12/28
