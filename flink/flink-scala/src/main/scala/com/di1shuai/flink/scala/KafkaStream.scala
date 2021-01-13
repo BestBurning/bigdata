@@ -27,11 +27,16 @@ object KafkaStream {
     val topicIn  = "flink-stream-in"
     val topicOut  = "flink-stream-out"
 
-    val kafkaSource = new FlinkKafkaConsumer(topicIn, new SimpleStringSchema(), consumerProperties);
+    val kafkaSource = new FlinkKafkaConsumer(
+      topicIn,
+      new SimpleStringSchema(),
+      consumerProperties
+    )
     val kafkaSink = new FlinkKafkaProducer(
       topicOut,                  // target topic
       new SimpleStringSchema(),    // serialization schema
-      producerProperties)
+      producerProperties
+    )
     //,  //                 producer config FlinkKafkaProducer.Semantic.EXACTLY_ONCE)
 
     val env = StreamExecutionEnvironment.getExecutionEnvironment
