@@ -25,27 +25,24 @@ object RedisSink {
         val strings = s.split(",")
         SensorReader(strings(0), strings(1).toLong, strings(2).toDouble)
       })
-      .map(s => {
-        (s.id,s.temperature+"-"+s.timestamp)
-      })
 
     val conf = new FlinkJedisPoolConfig.Builder().setHost("di1shuai").build()
 
-    stream.addSink(new RedisSink[(String, String)](conf, new RedisExampleMapper))
+    stream.addSink(new RedisSink[SensorReader](conf, new RedisExampleMapper))
     stream.print("Redis Sink")
 
     env.execute("Redis Sink")
   }
 
 
-  class RedisExampleMapper extends RedisMapper[(String, String)] {
+  class RedisExampleMapper extends RedisMapper[SensorReader] {
     override def getCommandDescription: RedisCommandDescription = {
-      new RedisCommandDescription(RedisCommand.HSET, "HASH_NAME")
+      new RedisCommandDescription(RedisCommand.HSET, "Snesors")
     }
 
-    override def getKeyFromData(data: (String, String)): String = data._1
+    override def getKeyFromData(data: SensorReader): String = data.id
 
-    override def getValueFromData(data: (String, String)): String = data._2
+    override def getValueFromData(data: SensorReader): String = data.toString
   }
 
 }
