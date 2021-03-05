@@ -1,0 +1,23 @@
+server:
+  port: 8099
+  servlet:
+    context-path: /kafka
+spring:
+  kafka:
+    bootstrap-servers: kafka01:9092,kafka02:9093
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: di1shuai
+      topics: test1
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      maxPollRecords: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    template:
+      default-topic: test1

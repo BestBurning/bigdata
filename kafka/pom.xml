@@ -13,6 +13,7 @@
     <modules>
         <module>kafka-2.x</module>
         <module>kafka-0.x</module>
+        <module>kafka-spring</module>
     </modules>
     <artifactId>kafka</artifactId>
 
