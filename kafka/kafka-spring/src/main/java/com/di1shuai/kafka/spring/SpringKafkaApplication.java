@@ -30,7 +30,7 @@ public class SpringKafkaApplication {
                 "Application Dtwave-Boot is running! Access URLs:\n\t" +
                 "Local: \t\t\thttp://localhost:" + port + path + "/\n\t" +
                 "External: \t\thttp://" + ip + ":" + port + path + "/\n\t" +
-                "Swagger-UI: \thttp://" + ip + ":" + port + path + "/swagger-ui/index.html\n" +
+                "Swagger-UI: \thttp://" + ip + ":" + port + path + "/doc.html\n" +
                 "----------------------------------------------------------");
     }
 
