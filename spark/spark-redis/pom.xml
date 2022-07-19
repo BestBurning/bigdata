@@ -89,7 +89,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.di1shuai.spark.SparkZDFPermission</mainClass>
+                            <mainClass>com.di1shuai.spark.job.JobZDFPermission$</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
