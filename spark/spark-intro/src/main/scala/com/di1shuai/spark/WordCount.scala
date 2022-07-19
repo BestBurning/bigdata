@@ -11,7 +11,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object WordCount {
 
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName("WC")
+    val conf = new SparkConf().setMaster("local").setAppName("WC")
     val sc = new SparkContext(conf)
 
     // textFile 产生HadoopRDD和MapPartitionsRDD
